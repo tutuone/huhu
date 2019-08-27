@@ -1,6 +1,6 @@
 //导入vue模块
 import Vue from 'vue'
-//导入app组件
+//导入app组件   
 import app from './APP.vue'
 //导入mint-ui的组件
 import {Header} from 'mint-ui'
