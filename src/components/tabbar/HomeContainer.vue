@@ -1,22 +1,19 @@
 <template>
     <div>
-        <mt-swipe :auto="4000">
-        <mt-swipe-item v-for="item in lunbotuList" :key="item">
-            {{item}}
-        </mt-swipe-item>
-        
-        </mt-swipe>
+        <!-- 轮播图区域 -->
+        <swiper :lunbotuList="lunbotuList" :isfull="true"></swiper>
+
         <!-- 六宫格 -->
         <ul class="mui-table-view mui-grid-view mui-grid-9">
-            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><router-link to = "/home/newList">
                     <span class="mui-icon mui-icon-home"></span>
-                    <div class="mui-media-body">新闻资讯</div></a></li>
-            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+                    <div class="mui-media-body">新闻资讯</div></router-link ></li>
+            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><router-link to ="/home/photoList">
                     <span class="mui-icon mui-icon-email"><span class="mui-badge">5</span></span>
-                    <div class="mui-media-body">图片分享</div></a></li>
-            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+                    <div class="mui-media-body">图片分享</div></router-link></li>
+            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><router-link to="/home/goodslist">
                     <span class="mui-icon mui-icon-chatbubble"></span>
-                    <div class="mui-media-body">商品购买</div></a></li>
+                    <div class="mui-media-body">商品购买</div></router-link></li>
             <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
                     <span class="mui-icon mui-icon-location"></span>
                     <div class="mui-media-body">留言反馈</div></a></li>
@@ -33,6 +30,8 @@
 </template>
 <script>
 import {Toast}from 'mint-ui'
+import swiper from '../subcomponents/swiper.vue'
+
 export default {
     data(){
         return{
@@ -44,33 +43,25 @@ export default {
     },
     methods:{
         getLunbotu(){
-            // this.$http.get('http://vue.studyit.io/api/getlunbo').then(result=>{
+            // this.$http.get('api/getlunbo').then(result=>{
             //     if(result.body.status == 0){
             //           this.lunbotuList = result.body.message;
             //     }else{
             //           Toast("获取失败。。。。")
             //     }
             // })
-            this.lunbotuList=['wwwwww','eeeeeee','dddddd'];
+            this.lunbotuList=['https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1443361933,911214453&fm=26&gp=0.jpg',
+            'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=4140785490,19045763&fm=26&gp=0.jpg',
+            'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=236991697,603991298&fm=26&gp=0.jpg'];
         }
+    },
+    components:{
+        swiper
     }
 }
 </script>
 <style lang="scss" scoped>
-.mint-swipe {
-    height:200px;
-    .mint-swipe-item {
-    &:nth-child(1){
-        background-color: red;
-    } 
-    &:nth-child(2){
-        background-color: yellow;
-    } 
-    &:nth-child(3){
-        background-color: green;
-    } 
-}  
-}
+
 .mui-grid-view.mui-grid-9{
     background-color: #fff;
     border:none;
