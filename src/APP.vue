@@ -1,7 +1,11 @@
 <template>
     <div class="app-continer">
          <!-- 顶部 Header 区域 -->
-         <mt-header fixed title="吴女士的任务"></mt-header>
+         <mt-header fixed title="吴女士的任务">
+            <span  slot="left" v-show="flag">
+                    <mt-button icon="back" @click="goBack" >返回</mt-button>
+            </span>
+         </mt-header>
 
          <!-- 中间路由 router-view 区域 -->
          <transition>
@@ -19,7 +23,7 @@
 				<span class="mui-tab-label">会员</span>
 			</router-link>
 			<router-link class="mui-tab-item-llb" to="/shopcar">
-				<span class="mui-icon mui-icon-extra mui-icon-extra-cart"><span class="mui-badge">0</span></span>
+				<span class="mui-icon mui-icon-extra mui-icon-extra-cart"><span class="mui-badge" id="badge">{{ $store.getters.getAllCount}}</span></span>
 				<span class="mui-tab-label">购物车</span>
 			</router-link>
 			<router-link class="mui-tab-item-llb" to="/search">
@@ -32,6 +36,30 @@
     </div>
 </template>
 <script>
+export default {
+    data(){
+      return{
+          flag:false
+      }  
+    },
+    created(){
+        this.flag = this.$route.path == '/home'?false:true
+    },
+    methods:{
+        goBack(){
+            this.$router.go(-1)
+        }
+    },
+    watch:{
+        '$route.path':function(newVal){
+            if(newVal == '/home'){
+                this.flag=false
+            }else{
+                this.flag=true
+            }
+        }
+    }
+}
 </script>
 <style lang="scss" scoped>
 .mint-header{

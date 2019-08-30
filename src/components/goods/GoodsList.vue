@@ -58,7 +58,7 @@ export default {
                 //     }
                 // })
                 this.goodslist = [
-                    {id:1, title:'小米官方旗舰店红米note8 pro/redmi', add_timd:'2019-12-12', zhaiyao:'eeeeeeee', click:0, img_url:'https://img.alicdn.com/imgextra/i4/1714128138/O1CN01BskDXS29zFfws06J4_!!1714128138.jpg_430x430q90.jpg', sell_pricr:2195,
+                    {id:1, title:'小米官方旗舰店红米note8 pro/redmi', add_timd:'2019-12-12', zhaiyao:'eeeeeeee', click:0, img_url:'https://img.alicdn.com/bao/uploaded/i2/TB1AMUaf3HqK1RjSZFPaEswapXa_051838.jpg_sum.jpg', sell_pricr:2195,
                     mark_price:2499, stock_quantity:60},
                     {id:2, title:'小米官方旗舰店红米note8 pro/redmi', add_timd:'2019-12-12', zhaiyao:'eeeeeeee', click:0, img_url:'https://img.alicdn.com/imgextra/i1/3515402915/O1CN01nwv9eN1XP75U2s9OI_!!3515402915.jpg_430x430q90.jpg', sell_pricr:2195,
                     mark_price:2499, stock_quantity:60},
